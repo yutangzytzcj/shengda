@@ -1,5 +1,5 @@
 /**
- * ���ݿ����
+ * 锟斤拷锟捷匡拷锟斤拷锟�
  */
 package dao;
 import java.sql.Connection;
@@ -22,13 +22,13 @@ public class Conn {
 	private PreparedStatement statement;
 	private ResultSet res;
 	private List list;
-	//�������ݿ�����
+	//创建数据例库的链接的工具
 	public Connection getConnection() {									
 		String url="jdbc:mysql://localhost:3306/db_jxc?useSSL=false";
 		String user="root";
 		String password="123456";
 		try {			
-			Class.forName("com.mysql.jdbc.Driver");						//�������ݿ�����
+			Class.forName("com.mysql.jdbc.Driver");						//锟斤拷锟斤拷锟斤拷锟捷匡拷锟斤拷锟斤拷
 			connection=DriverManager.getConnection(url,user,password);	
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -36,7 +36,7 @@ public class Conn {
 		return connection;
 	}
 
-	//����û�
+	// 创建新用户的方式
 	public int insertUser(String username,String password) {
 		int i=0;
 		try {
@@ -50,7 +50,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//�û���ѯ
+	// 查询用户的信息
 	public List selectUser() {
 		String sql="select * from user";
 		try {
@@ -68,7 +68,7 @@ public class Conn {
 		}
 		return list;
 	}
-	//�û�����
+	// 修改用户信息根据id
 	public int updateUser(int id,String name,String password) {
 		int i=0;
 		try {
@@ -80,7 +80,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//�û�ɾ��
+	// 根据id 删除用户信息
 	public int deleteUser(int id) {
 		int i=0;
 		try {
@@ -92,7 +92,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//ְ����Ϣ���
+	// 添加雇员信息
 	public int insertEmployeeInfo(String name,String sex,Date birthdate,String job,double salary) {
 		int i=0;
 		try {
@@ -110,7 +110,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//ְ����Ϣ��ѯ
+	// 显示所有雇员信息  
 	public List selectEmployee() {
 		String sql="select * from employee";
 		try {
@@ -132,7 +132,7 @@ public class Conn {
 		}
 		return list;
 	}
-	//ְ����Ϣ����
+	// 修改信息
 	public int updateEmployee(int id,String name,String sex,Date birthdate,String job,double salary) {
 		int i=0;
 		try {
@@ -144,7 +144,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//ְ����Ϣɾ��
+	// 删除
 	public int deleteEmployee(int id) {
 		int i=0;
 		String sql="delete from employee where id='"+id+"'";
@@ -156,7 +156,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//��ӿͻ���Ϣ
+	// 新增客户
 	public int insertKehu(String id,String name,String person,String address,String phone) {
 		int i=0;
 		try {
@@ -173,7 +173,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//��ѯ�ͻ���Ϣ
+	//  查询所有的客户 
 	public List selectKehu() {
 		try {
 			String sql="select * from customer";
@@ -194,7 +194,7 @@ public class Conn {
 		}
 		return list;
 	}
-	//���¿ͻ���Ϣ
+	//  修改信息
 	public int updateKehu(String id,String name,String person,String address,String phone) {
 		int i=0;
 		try {
@@ -207,7 +207,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//ɾ���ͻ���Ϣ
+	// 删除客户信息
 	public int deleteKehu(String id) {
 		int i=0;
 		try {
@@ -219,7 +219,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//��ӹ�Ӧ����Ϣ
+	//   新增供应商信息
 	public int insertGongyingshang(String id,String name,String person,String address) {
 		int i=0;
 		try {
@@ -235,7 +235,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//��ѯ��Ӧ����Ϣ
+	//    显示所有供应商信息
 	public List selectGongyingshang() {
 		try {
 			String sql="select * from supplier";
@@ -255,7 +255,7 @@ public class Conn {
 		}
 		return list;
 	}
-	//���¹�Ӧ����Ϣ
+	// 
 	public int updateGongyingshang(String id,String name,String person,String addres) {
 		int i=0;
 		try {
@@ -267,7 +267,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//ɾ����Ӧ����Ϣ
+	//删 
 	public int deleteGongyingshang(String id) {
 		int i=0;
 		try {
@@ -279,7 +279,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//�����Ʒ��Ϣ
+	// 
 	public int insertShangPin(String id,String name,String colour,String type,String guige,
 			int maxnumber,int minnumber,float price) {
 		int i=0;
@@ -300,7 +300,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//��ѯ��Ʒ��Ϣ
+	//   显示所有商品信息
 	public List selectShangPin() {
 		try {
 			String sql="select * from shangpin";
@@ -325,7 +325,7 @@ public class Conn {
 		}
 		return list;
 	}
-	//������Ʒ��Ϣ
+	//    修改商品信息
 	public int updateShangPin(String id,String name,String colour,String type,String guige,
 			int max,int min,float price) {
 		int i=0;
@@ -339,7 +339,7 @@ public class Conn {
 		}
 		return i;
 	}
-	//ɾ����Ʒ��Ϣ
+	//    删除商品
 	public int deleteShangPin(String id) {
 		int i=0;
 		try {
